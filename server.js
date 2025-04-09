@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const net = require('net');
@@ -7,7 +6,7 @@ const { Client: SshClient } = require('ssh2');
 
 // 创建Express应用
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // 中间件
 app.use(morgan('dev'));
@@ -175,14 +174,14 @@ app.listen(PORT, () => {
 });
 
 // 启动FTP代理服务器
-const FTP_PROXY_PORT = process.env.FTP_PROXY_PORT || 2121;
+const FTP_PROXY_PORT = 2121;
 ftpProxyServer.listen(FTP_PROXY_PORT, () => {
   console.log(`FTP代理服务器运行在端口 ${FTP_PROXY_PORT}`);
   console.log(`使用方式: 在FTP客户端中使用 username@targethost:targetport 作为用户名`);
 });
 
 // 启动SFTP代理服务器
-const SFTP_PROXY_PORT = process.env.SFTP_PROXY_PORT || 2222;
+const SFTP_PROXY_PORT = 2222;
 sftpProxyServer.listen(SFTP_PROXY_PORT, () => {
   console.log(`SFTP代理服务器运行在端口 ${SFTP_PROXY_PORT}`);
   console.log(`使用方式: 在SFTP客户端中使用 username@targethost:targetport 作为用户名`);
