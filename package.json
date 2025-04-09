@@ -17,7 +17,7 @@
     "nodemon": "^3.0.3"
   },
   "engines": {
-    "node": ">=18"  // 建议 Node.js 版本
+    "node": ">=18" 
   },
   "author": "Your Name",
   "license": "MIT"
