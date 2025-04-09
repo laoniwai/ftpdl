@@ -6,7 +6,7 @@ const { Client: SshClient } = require('ssh2');
 
 // 创建Express应用
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 // 中间件
 app.use(morgan('dev'));
